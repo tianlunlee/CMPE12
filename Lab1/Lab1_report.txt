@@ -1,0 +1,51 @@
+University of California, Santa Cruz
+CMPE 12 Lab Section 1A TA: Brandon Luu 
+Lab 1: Intro to Logic with Multimedia Logic
+Tian Lun Lee
+tlee60@ucsc.edu 
+Due 01/22/2017
+
+Purpose
+
+The purpose of this lab was to introduce us to the Multimedia Logic program and practice our logic with the program's components,
+such as gates and switches.
+
+Procedure
+
+Part A
+This part was simply a tutorial to the program. I learned to place a switch from the palette onto the logic board
+and how to connect the switch to a light. The light turns on when the switch's value is 1, and off when its value is 0.
+The LED can change certain properties, such as the color of its light.  
+
+Part B
+I recreated the schematic and garnered understanding of how nodes are used to split a switch's signal so it can light up the LED and 
+change the value of the 7-segment LED. I also incorporated the Signal Sender and Signal Receiver parts to organize the schematic.
+The Senders and Receivers served a purpose similar to the nodes, but did so in a way that eliminated the wires in between them.
+
+Part C
+The purpose of this part was to recreate the logic of a truth table using gates. I used three switches for the inputs and connected 
+Signal Senders to organize the signals. I built the schematic based on the outputs that were 1. Then, for each of the combinations
+of signals that produced a 1, I inverted the signals that started out as 0 then used AND gates to connect the signals to a final OR gate.
+I then attached to the OR gate an LED to test each of the combinations to confirm that the logic was correctly reproduced. 
+The process of building a truth table using gates was reminiscent of Disjunctive Normal Form. 
+
+Part D
+I started out finding the push button switch, which was hidden inside the properties of the on-off switch. I connected the Random
+Number Generator's 2^0 and 2^1 outputs to Senders and Receivers. Then I placed switches to represent the user's guess, and attached 
+Senders and Receivers. I organized the schematic in a way that placed the Generator's 2^1 Receiver was next to the User's 2^ Receiver, and the same
+for the 2^0 Receivers. That organization was necessary to correctly compare the User's input with the generated number. Unfortunately, 
+the scheme wouldn't work correctly if only AND gates were used, because AND only outputs 1 if both the Generator and the User inputs 1. 
+The scheme should output 1 if both inputs were 0 as well. I wrote out a truth table for each of the comparisons (for each switch: 2^1 & 2^0),
+and found that inverted XOR would give the correct outputs. I built the inverted XOR gates for each of the comparisons and connected them through
+and AND gate, which then attached to an LED. I then attached LEDs to the Generator's Receiver using a Node, so that I would know what number was generated and so that I could test the schematic. 
+
+Results
+This Lab helped me identify the functions of the MML program, and practice converting truth tables to a logic gate schematic. Finding the push button,
+figuring out how the random number generator functioned, and developing the inverted XOR truth table were the several challenges I faced throughout the lab.
+
+If I didn't have the 7-segment LED, I would line up 7 LEDs in the same fashion and create a truth table that would indicate which lights
+would shine based on the switches. The LEDs would each have their own pair of Senders and Receivers, so that each individual LED can be
+controlled. Then I would recreate the truth table with gates, similar to the process done in Part C. 
+
+The random number generator can't really be truly random, but it could generate numbers in an order that would look "random" in our eyes perhaps using a mathematical function involving modulus.
+
